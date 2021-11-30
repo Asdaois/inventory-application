@@ -6,7 +6,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case "PUT":
       const { name } = req.body;
-      const machineryType = new MachineryType({ name });
       MachineryType.findByIdAndUpdate(
         req.query.id,
         { name: name },
