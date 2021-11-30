@@ -9,7 +9,6 @@ const MachineryTypeSchema = new Schema(
   },
   { timestamps: true }
 );
-mongoose.models = {}
-const MachineryType =  mongoose.model('MachineryType', MachineryTypeSchema)
 
-export default MachineryType;
+export default mongoose.models.MachineryType ||
+  mongoose.model("MachineryType", MachineryTypeSchema);
