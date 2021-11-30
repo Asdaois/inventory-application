@@ -5,15 +5,24 @@ import Machinery from "../../../models/Machinery";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (req.method) {
-      case "PUT":
+      case "PUT": {
+        const doc = await Machinery.findByIdAndUpdate(req.query.id, {
+          ...req.body,
+        });
+        res.json({message: 'UPDATE'});
         break;
-      case "GET":
+      }
+      case "GET": {
         const doc = await Machinery.findById(req.query.id);
         await doc.populate("machine_type");
         res.json(doc);
         break;
-      case "DELETE":
+      }
+      case "DELETE": {
+        const doc = await Machinery.findByIdAndDelete(req.query.id);
+        res.json({message: "deleted", doc})
         break;
+      }
       default:
         break;
     }
