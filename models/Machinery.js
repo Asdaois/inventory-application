@@ -16,10 +16,11 @@ const MachinerySchema = new Schema(
     serial: {
       type: String,
       required: true,
+      unique: true,
     },
     details: {
       type: String,
-      required: true
+      required: true,
     },
     prize: {
       type: Number,
@@ -29,6 +30,4 @@ const MachinerySchema = new Schema(
   { timestamps: true }
 );
 
-
-
-export default mongoose.models.Machinery || model('Machinery', MachinerySchema);
+export default mongoose.models.Machinery || model("Machinery", MachinerySchema);

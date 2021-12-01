@@ -1,7 +1,7 @@
 import { Models } from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "../../middleware/mongodb";
-import Machinery from "../../models/Machinery";
+import Machinery from "../../models/Machinery.js";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -13,8 +13,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         break;
       }
       case "GET": {
-        const doc = await Machinery.find({}).populate("machine_type");
-        res.json(doc);
+        Machinery.find({})
+          .populate("machine_type")
+          .exec((err, docs) => {
+            res.json(docs);
+          });
         break;
       }
       default:

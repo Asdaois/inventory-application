@@ -10,7 +10,7 @@ const RentalSchema = new Schema(
     machinery_rented: [
       {
         type: Schema.Types.ObjectId,
-        ref: Machinery,
+        ref: "Machinery",
         required: true,
       },
     ],
@@ -20,7 +20,6 @@ const RentalSchema = new Schema(
     },
     due_date: {
       type: Date,
-      required: true,
     },
   },
   { timestamps: true }
