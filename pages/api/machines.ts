@@ -1,23 +1,20 @@
-import { Models } from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "../../middleware/mongodb";
-import Machinery from "../../models/Machinery.js";
+import { Machine } from "@models";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (req.method) {
       case "POST": {
-        const doc = new Machinery({ ...req.body });
+        const doc = new Machine({ ...req.body });
         const docSaved = await doc.save();
         res.json(docSaved);
         break;
       }
       case "GET": {
-        Machinery.find({})
-          .populate("machine_type")
-          .exec((err, docs) => {
-            res.json(docs);
-          });
+        const docs = await Machine.find({}).populate("machine_type");
+        console.log(docs);
+        res.json(docs);
         break;
       }
       default:

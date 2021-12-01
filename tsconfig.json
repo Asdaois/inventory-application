@@ -16,7 +16,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/models/*": ["models/*"]
+      "@/components/*": ["components/*"],
+      "@models": ["models/index"],
+      "@/axiosRequests": ["util/axiosRequests.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
