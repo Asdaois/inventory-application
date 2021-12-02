@@ -1,16 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
+import { Rental } from "@models";
 import connectDB from "../../middleware/mongodb";
-import Rental from "../../models/Rental.js";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (req.method) {
       case "POST": {
-        res.json({ message: "POST NOT IMPLEMENTED", body: req.body });
+        const rental = new Rental({ ...req.body });
+        await rental.save();
+        res.json(rental);
         break;
       }
       case "GET": {
-        const docs = await Rental.find({});
+        const docs = await Rental.find({})
+          .populate("user")
+          .populate("machinery_rented");
         res.json(docs);
         break;
       }

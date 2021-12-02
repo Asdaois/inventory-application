@@ -1,8 +1,8 @@
-GET http://localhost:3000/api/machinerys HTTP/1.1
+GET http://localhost:3000/api/machines HTTP/1.1
 
 
 ###
-POST http://localhost:3000/api/machinerys HTTP/1.1
+POST http://localhost:3000/api/machines HTTP/1.1
 Content-Type: application/json
 
 {

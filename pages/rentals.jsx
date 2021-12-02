@@ -1,14 +1,13 @@
-import React from 'react'
-import Layout from '@/components/Layout'
+import Layout from "@/components/Layout";
+import React from "react";
+import RentalsSimple from "../components/rentals/RentalsSimple";
 import { getAll } from "@/axiosRequests";
+import useSWR from "swr";
 
 function Users() {
-  return (
-    <Layout>
-      Hello from rentals
-    </Layout>
-  )
+  const { data: response, error } = useSWR("api/rentals", getAll);
+
+  return <Layout>{!response ? "Loading" : response.data.map(rental => <RentalsSimple key={rental._id} rental={rental} /> )}</Layout>;
 }
 
-export default Users
-
+export default Users;

@@ -1,4 +1,4 @@
-import mongoose, { model, models, Schema } from "mongoose";
+import mongoose, { Schema, model, models } from "mongoose";
 
 const RentalSchema = new Schema(
   {
@@ -20,6 +20,12 @@ const RentalSchema = new Schema(
     },
     due_date: {
       type: Date,
+    },
+    status: {
+      type: String,
+      required: true,
+      enum: ["Active", "Paying", "Finished"],
+      default: "Available",
     },
   },
   { timestamps: true }
