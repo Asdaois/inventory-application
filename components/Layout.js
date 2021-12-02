@@ -1,17 +1,22 @@
 import Head from "next/head";
+import NavBar from "./navbar/NavBar";
 import React from "react";
-import NavBar from "./NavBar";
 
 function Layout({ children }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="grid grid-cols-12 grid-rows-6 min-h-screen">
       <Head>
         <title>Inventory Application | Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
-      {children}
-      <footer className="flex items-center justify-center w-full h-24 border-t"></footer>
+      <main className="flex col-span-12 row-span-5">
+        <NavBar />
+        {children}
+      </main>
+
+      <footer className="col-span-12 row-span-1 flex items-center justify-center w-full border-t">
+        This is the footer
+      </footer>
     </div>
   );
 }

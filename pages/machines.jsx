@@ -11,11 +11,13 @@ function Machines() {
 
   return (
     <Layout>
-      {!response
-        ? "Loading..."
-        : response.data.map((machine) => {
-            return <MachineSimple key={machine._id} machine={machine} />;
-          })}
+      <div className="flex flex-wrap justify-around">
+        {!response
+          ? "Loading..."
+          : response.data.map((machine) => {
+              return <MachineSimple key={machine._id} machine={machine} />;
+            })}
+      </div>
     </Layout>
   );
 }
