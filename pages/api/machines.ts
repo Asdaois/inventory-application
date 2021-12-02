@@ -13,7 +13,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       }
       case "GET": {
         const docs = await Machine.find({}).populate("machine_type");
-        console.log(docs);
         res.json(docs);
         break;
       }

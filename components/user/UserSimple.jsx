@@ -2,7 +2,7 @@ import React from "react";
 
 function UserSimple({ user }) {
   return (
-    <div className="" key={user._id}>
+    <div className="">
       <p>
         <strong>{user.company}</strong>
       </p>
