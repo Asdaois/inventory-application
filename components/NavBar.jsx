@@ -16,7 +16,7 @@ function NavBar() {
       <Link href="/machines">
         <a>Machines</a>
       </Link>
-      <Link href="/machines-types">
+      <Link href="/machine-types">
         <a>Machines types</a>
       </Link>
     </nav>

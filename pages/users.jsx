@@ -1,22 +1,21 @@
-import React from "react";
-import useSWR from "swr";
 import Layout from "@/components/Layout";
+import React from "react";
 import UserSimple from "@/components/user/UserSimple";
 import { getAll } from "@/axiosRequests";
+import useSWR from "swr";
 
-
-function Users({ users }) {
-  const { data, error } = useSWR("/api/users/", getAll);
+function Users() {
+  const { data: response, error } = useSWR("/api/users/", getAll);
 
   if (error) return "An error has ocurred.";
-
-  if (!data) return "Loading...";
-
+  
   return (
     <Layout>
-      {data.data.map((user) => {
-        return <UserSimple user={user} key={user._id} />;
-      })}
+      {!response
+        ? "Loading..."
+        : response.data.map((user) => {
+            return <UserSimple user={user} key={user._id} />;
+          })}
     </Layout>
   );
 }
