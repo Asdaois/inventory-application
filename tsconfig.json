@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@models": ["models/index"],
+      "@/models": ["models/index"],
       "@/axiosRequests": ["util/axiosRequests.ts"]
     }
   },

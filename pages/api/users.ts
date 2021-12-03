@@ -1,19 +1,23 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
+import { User } from "../../models/index";
 import connectDB from "../../middleware/mongodb";
-import User from "@/models/User.js";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (req.method) {
       case "POST": {
-        const user = new User({ ...req.body })
-        const docs = await user.save()
-        res.json(docs);
+        const user = new User({
+          ...req.body,
+          phone_number: parseInt(req.body.phone_number),
+        });
+        const docs = await user.save();
+        res.redirect("/");
         break;
       }
       case "GET": {
         const docs = await User.find({});
-        res.json(docs)
+        res.json(docs);
         break;
       }
       default:

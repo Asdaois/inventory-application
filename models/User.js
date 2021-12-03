@@ -14,7 +14,7 @@ const UserSchema = new Schema(
       type: String,
     },
     phone_number: {
-      type: Number,
+      type: String,
       required: true,
     },
     direction: {
