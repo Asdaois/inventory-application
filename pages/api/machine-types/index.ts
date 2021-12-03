@@ -1,6 +1,7 @@
-import { MachineType } from "@models";
 import { NextApiRequest, NextApiResponse } from "next";
-import connectDB from "../../middleware/mongodb";
+
+import { MachineType } from "@/models";
+import connectDB from "../../../middleware/mongodb";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

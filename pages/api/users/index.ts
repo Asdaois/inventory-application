@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { User } from "../../models/index";
-import connectDB from "../../middleware/mongodb";
+import { User } from "@/models";
+import connectDB from "../../../middleware/mongodb";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
