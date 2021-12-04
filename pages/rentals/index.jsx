@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import React from "react";
 import RentalsSimple from "../../components/rentals/RentalsSimple";
-import { getAll } from "@/axiosRequests";
+import { getAll } from "../../util/axiosRequests";
 import useSWR from "swr";
 
 function Users() {

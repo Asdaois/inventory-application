@@ -4,6 +4,7 @@ import React from "react";
 import { getAll } from "../../util/axiosRequests";
 import useSWR from "swr";
 
+// TODO: Change the view to a list
 function Machines() {
   const { data: response, error } = useSWR("/api/machines/", getAll);
 
