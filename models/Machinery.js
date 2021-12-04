@@ -1,5 +1,7 @@
 import mongoose, { Schema, model } from "mongoose";
 
+export const possiblesStatus = ["Damaged", "Maintenance", "Available", "Rented"]
+
 const MachinerySchema = new Schema(
   {
     machine_type: {

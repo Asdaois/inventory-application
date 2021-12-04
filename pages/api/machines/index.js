@@ -11,6 +11,7 @@ const handler = async (req, res ) => {
   try {
     switch (req.method) {
       case "POST": {
+        // TODO: Handle this request from client side
         const doc = new Machine({ ...req.body });
         const docSaved = await doc.save();
         res.json(docSaved);
