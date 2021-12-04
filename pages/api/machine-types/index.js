@@ -16,7 +16,7 @@ const handler = async (req, res ) => {
         newMachineryType.save((err, result) => {
           if (err) res.json({ error: "error" });
 
-          res.json(result);
+          res.redirect("/machine-types");
         });
 
         break;
