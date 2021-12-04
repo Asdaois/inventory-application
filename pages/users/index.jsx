@@ -7,7 +7,7 @@ import useSWR from "swr";
 function Users() {
   const { data: response, error } = useSWR("/api/users/", getAll);
 
-  if (error) return "An error has ocurred.";
+  if (error) return <Layout><div className="text-red-600">An error has ocurred!!</div></Layout>;
   
   return (
     <Layout>

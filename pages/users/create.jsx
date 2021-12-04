@@ -1,6 +1,5 @@
 import ButtonSubmit from "../../components/form/ButtonSubmit";
 import InputFullName from "../../components/form/InputFullName";
-import InputNumber from "../../components/form/InputNumber";
 import InputText from "../../components/form/InputText ";
 import Layout from "../../components/Layout";
 import React from "react";

@@ -1,7 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
 import connectDB from "../../../middleware/mongodb";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+/** 
+* @param {NextApiRequest} req
+* @param {NextApiResponse} res
+*/
+const handler = async (req, res ) => {
   try {
     switch (req.method) {
       case "PUT": {

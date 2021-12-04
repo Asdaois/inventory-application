@@ -1,8 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import connectDB from "../../../middleware/mongodb";
-import MachineryType from "../../../models/MachineryType";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+import MachineryType from "../../../models/MachineryType";
+import connectDB from "../../../middleware/mongodb";
+
+/** 
+* @param {NextApiRequest} req
+* @param {NextApiResponse} res
+*/
+const handler = async (req, res ) => {
   switch (req.method) {
     case "PUT":
       const { name } = req.body;

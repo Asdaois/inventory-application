@@ -10,6 +10,10 @@ function NavBar() {
       <NavLink href="/rentals" displayName="Rentals"/>
       <NavLink href="/machines" displayName="Machines"/>
       <NavLink href="/machine-types" displayName="Machine types"/>
+      <NavLink href="/users/create" displayName="Add new User"/>
+      <NavLink href="/rentals/create" displayName="Add Rental"/>
+      <NavLink href="/machines/create" displayName="Add Machine"/>
+      <NavLink href="/machine-types/create" displayName="Add Machine types"/>
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import React from "react";
-import { getAll } from "../util/axiosRequests";
+import { getAll } from "../../util/axiosRequests";
 import useSWR from "swr";
 
 function MachineTypes() {

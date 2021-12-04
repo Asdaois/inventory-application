@@ -1,22 +1,25 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { User } from "@/models";
+import { Rental } from "@/models";
 import connectDB from "../../../middleware/mongodb";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+/** 
+* @param {NextApiRequest} req
+* @param {NextApiResponse} res
+*/
+const handler = async (req, res ) => {
   try {
     switch (req.method) {
       case "POST": {
-        const user = new User({
-          ...req.body,
-          phone_number: parseInt(req.body.phone_number),
-        });
-        const docs = await user.save();
-        res.redirect("/");
+        const rental = new Rental({ ...req.body });
+        await rental.save();
+        res.json(rental);
         break;
       }
       case "GET": {
-        const docs = await User.find({});
+        const docs = await Rental.find({})
+          .populate("user")
+          .populate("machinery_rented");
         res.json(docs);
         break;
       }
