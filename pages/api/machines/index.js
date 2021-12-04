@@ -2,19 +2,18 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import { Machine } from "@/models";
 import connectDB from "../../../middleware/mongodb";
+import { post } from "../../../util/api.machines";
 
-/** 
-* @param {NextApiRequest} req
-* @param {NextApiResponse} res
-*/
-const handler = async (req, res ) => {
+/**
+ * @param {NextApiRequest} req
+ * @param {NextApiResponse} res
+ */
+const handler = async (req, res) => {
   try {
     switch (req.method) {
       case "POST": {
-        // TODO: Handle this request from client side
-        const doc = new Machine({ ...req.body });
-        const docSaved = await doc.save();
-        res.json(docSaved);
+        post(req.body);
+        res.redirect("/")
         break;
       }
       case "GET": {

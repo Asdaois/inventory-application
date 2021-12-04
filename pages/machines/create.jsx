@@ -18,7 +18,7 @@ function Create() {
       <form
         className="w-full max-w-sm"
         method="post"
-        action="/api/machine-types/"
+        action="/api/machines/"
       >
         <InputSelect
           displayName="Status"
