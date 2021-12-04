@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import User from "models/User";
 import connectDB from "../../../middleware/mongodb";
 
 /** 
@@ -16,6 +17,8 @@ const handler = async (req, res ) => {
         break;
       }
       case "DELETE": {
+        await User.findByIdAndDelete(req.query.id);
+        res.redirect("/users/")
         break;
       }
       default:

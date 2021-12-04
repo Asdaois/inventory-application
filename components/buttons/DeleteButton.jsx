@@ -1,8 +1,11 @@
 import React from "react";
+import axios from "axios";
 
-function DeleteButton() {
+function DeleteButton({url}) {
   return (
-    <button className="block mx-auto" >
+    <button className="block mx-auto" onClick={() => {
+      axios.delete(url)
+    }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-6 h-6 text-red-400"

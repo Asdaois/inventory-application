@@ -17,7 +17,7 @@ function UserSimple({ user }) {
         <EditButton />
       </Td>
       <Td center={true}>
-        <DeleteButton />
+        <DeleteButton url={`/api/users/${user._id}`}/>
       </Td>
     </tr>
   );
