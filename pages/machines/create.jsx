@@ -12,7 +12,7 @@ import useSWR from "swr";
 
 function Create() {
   const { data: machineTypes, error } = useSWR("/api/machine-types/", getAll);
-  console.log(machineTypes);
+
   return (
     <Layout>
       <form

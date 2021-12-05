@@ -6,18 +6,7 @@ import axios from "axios";
 function Form({ user, method = "post", action, children }) {
   const [newUser, setNewUser] = useState(user);
 
-  const onSubmit = async (e) => {
-    // console.log(e);
-    // if (method === "put") {
-    //   e.preventDefault();
-    //   console.log(newUser);
-    //   const data = await JSON.stringify(newUser)
-    //   await axios.post(
-    //     `/api/users/${action}`,
-    //     data,
-    //   );
-    // }
-  };
+  const onSubmit = async (e) => {};
 
   const handleChange = (e) => {
     setNewUser({ ...user, [e.target.name]: e.target.value });
