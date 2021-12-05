@@ -1,12 +1,12 @@
 import React from "react";
 
-function ButtonSubmit({value}) {
+function ButtonSubmit({ value }) {
   return (
-    <div class="md:flex md:items-center">
-      <div class="md:w-1/3"></div>
-      <div class="md:w-2/3">
+    <div className="md:flex md:items-center">
+      <div className="md:w-1/3"></div>
+      <div className="md:w-2/3">
         <button
-          class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
           type="submit"
         >
           {value}

@@ -16,7 +16,7 @@ const handler = async (req, res) => {
           phone_number: parseInt(req.body.phone_number),
         });
         const docs = await user.save();
-        res.redirect("/");
+        res.redirect("/users");
         break;
       }
       case "GET": {

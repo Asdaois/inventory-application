@@ -10,10 +10,16 @@ import connectDB from "../../../middleware/mongodb";
 const handler = async (req, res ) => {
   try {
     switch (req.method) {
-      case "PUT": {
+      case "POST": {
+        // TODO: This is a update? This is wrong but axios don't work
+        // console.log({ body: req.body, id: req.query.id, req })
+        const doc = await User.findByIdAndUpdate(req.query.id, {...req.body})
+        res.redirect("/users/")
         break;
       }
       case "GET": {
+        const doc = await User.findById(req.query.id)
+        res.json(doc);
         break;
       }
       case "DELETE": {

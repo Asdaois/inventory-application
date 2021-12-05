@@ -14,7 +14,7 @@ function UserSimple({ user }) {
       </Td>
       <Td>{user.phone_number}</Td>
       <Td center={true}>
-        <EditButton />
+        <EditButton url={`/users/create/${user._id}`}/>
       </Td>
       <Td center={true}>
         <DeleteButton url={`/api/users/${user._id}`}/>

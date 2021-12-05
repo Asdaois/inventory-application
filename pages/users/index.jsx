@@ -15,6 +15,13 @@ function Users() {
       </Layout>
     );
 
+  if (!response)
+    return (
+      <Layout>
+        <div className="text-blue-600">Loading...</div>
+      </Layout>
+    );
+
   return (
     <Layout>
       <div className="">
@@ -29,11 +36,9 @@ function Users() {
             </tr>
           </thead>
           <tbody className="">
-            {!response
-              ? "Loading..."
-              : response.data.map((user) => {
-                  return <UserSimple user={user} key={user._id} />;
-                })}
+            {response.data.map((user) => {
+              return <UserSimple user={user} key={user._id} />;
+            })}
           </tbody>
         </table>
       </div>

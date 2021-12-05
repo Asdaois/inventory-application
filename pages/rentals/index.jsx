@@ -5,9 +5,9 @@ import { getAll } from "../../util/axiosRequests";
 import useSWR from "swr";
 
 function Users() {
-  const { data: response, error } = useSWR("api/rentals", getAll);
+  // const { data: response, error } = useSWR("api/rentals", getAll);
 
-  return <Layout>{!response ? "Loading" : response.data.map(rental => <RentalsSimple key={rental._id} rental={rental} /> )}</Layout>;
+  return <Layout>{true ? "Not Implemented" : response.data.map(rental => <RentalsSimple key={rental._id} rental={rental} /> )}</Layout>;
 }
 
 export default Users;
