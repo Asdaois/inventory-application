@@ -4,7 +4,7 @@ import React from "react";
 
 function Layout({ children }) {
   return (
-    <div className="grid grid-cols-12 grid-rows-6 min-h-screen">
+    <tr className="grid grid-cols-12 grid-rows-6 min-h-screen">
       <Head>
         <title>Inventory Application | Home</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,7 +17,7 @@ function Layout({ children }) {
       <footer className="col-span-12 row-span-1 flex items-center justify-center w-full border-t">
         This is the footer
       </footer>
-    </div>
+    </tr>
   );
 }
 

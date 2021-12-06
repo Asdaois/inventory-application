@@ -25,8 +25,8 @@ function InputFullName({ firstName, lastName, handleChange }) {
   }
 
   return (
-    <div className="flex flex-wrap -mx-3 mb-6">
-      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <tr className="flex flex-wrap -mx-3 mb-6">
+      <tr className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
           htmlFor="grid-first-name"
@@ -42,8 +42,8 @@ function InputFullName({ firstName, lastName, handleChange }) {
           onChange={handleFirstName}
           required
         />
-      </div>
-      <div className="w-full md:w-1/2 px-3">
+      </tr>
+      <tr className="w-full md:w-1/2 px-3">
         <label
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
           htmlFor="grid-last-name"
@@ -59,8 +59,8 @@ function InputFullName({ firstName, lastName, handleChange }) {
           onChange={handleLastName}
           required
         />
-      </div>
-    </div>
+      </tr>
+    </tr>
   );
 }
 

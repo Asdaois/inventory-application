@@ -24,18 +24,16 @@ function Users() {
 
   return (
     <Layout>
-      <div className="">
+      <div>
         <table className="table-auto border-collapse border border-gray-600 min-w-[80%]">
           <thead className="">
             <tr>
               <Th>Company</Th>
               <Th>Name</Th>
               <Th>Phone Number</Th>
-              <Th>Edit</Th>
-              <Th>Delete</Th>
             </tr>
           </thead>
-          <tbody className="">
+          <tbody>
             {response.data.map((user) => {
               return <UserSimple user={user} key={user._id} />;
             })}
