@@ -1,19 +1,29 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
+import MachineryType from "../../../models/MachineryType";
 import Machinery from "../../../models/Machinery";
 import connectDB from "../../../middleware/mongodb";
-/** 
-* @param {NextApiRequest} req
-* @param {NextApiResponse} res
-*/
-const handler = async (req, res ) => {
+/**
+ * @param {NextApiRequest} req
+ * @param {NextApiResponse} res
+ */
+const handler = async (req, res) => {
+  console.log(req.method);
   try {
     switch (req.method) {
-      case "PUT": {
-        const doc = await Machinery.findByIdAndUpdate(req.query.id, {
-          ...req.body,
+      case "POST": {
+        const machineType = await MachineryType.findOne({
+          name: req.body.machine_type,
         });
-        res.json({message: 'UPDATE'});
+        const machineUpdate = {
+          ...req.body,
+          ["machine_type"]: machineType._id,
+        };
+        console.log({ machineType, body: req.body, machineUpdate });
+        const doc = await Machinery.findByIdAndUpdate(
+          req.query.id,
+          machineUpdate
+        );
+        res.redirect("/machines");
         break;
       }
       case "GET": {
@@ -24,7 +34,7 @@ const handler = async (req, res ) => {
       }
       case "DELETE": {
         const doc = await Machinery.findByIdAndDelete(req.query.id);
-        res.json({message: "deleted", doc})
+        res.json({ message: "deleted", doc });
         break;
       }
       default:

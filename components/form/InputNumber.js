@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from "react";
 
-function InputNumber({name, displayName, required}) {
+function InputNumber({ name, displayName, required, value }) {
+  const [_value, setValue] = useState(value);
   return (
     <div className="md:flex md:items-center mb-6">
       <div className="md:w-1/3">
@@ -17,6 +18,8 @@ function InputNumber({name, displayName, required}) {
           id={name}
           name={name}
           type="number"
+          value={_value}
+          onChange={(e) => setValue(e.target.value)}
           required={required ? required : false}
         />
       </div>
@@ -24,4 +27,4 @@ function InputNumber({name, displayName, required}) {
   );
 }
 
-export default InputNumber
+export default InputNumber;
