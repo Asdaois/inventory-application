@@ -1,10 +1,12 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from "next/link";
+import Layout from "../components/Layout";
 
-export default function Home() {
-  return (
-    <Layout>
-      Home
-    </Layout>
-  )
+export default function Home({ message }) {
+  return <Layout>{message}</Layout>;
+}
+
+export async function getServerSideProps(params) {
+  return {
+    props: { message: "Enable server?" },
+  };
 }
