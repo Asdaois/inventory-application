@@ -10,7 +10,3 @@ export async function getServerSideProps(params) {
     props: { message: "Enable server?" },
   };
 }
-
-export async function getServerSideProps(params) {
-  
-}
