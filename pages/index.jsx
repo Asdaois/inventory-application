@@ -6,7 +6,9 @@ export default function Home({ message }) {
 }
 
 export async function getServerSideProps(params) {
+  let message = await fetch('/api')
+  message = await message.json();
   return {
-    props: { message: "Enable server?" },
+    props: { message },
   };
 }
